@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrinho e Pedido | Shopping Le Parfum</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body data-pagina="carrinho">
+  <header class="border-bottom bg-white sticky-top">
+    <nav class="navbar navbar-expand-lg container py-3">
+      <a class="navbar-brand fw-bold" href="index.html">Shopping Le Parfum</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuCarrinho" aria-controls="menuCarrinho" aria-expanded="false" aria-label="Alternar navegação">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menuCarrinho">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-2">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Voltar ao catálogo</a>
+          </li>
+          <li class="nav-item">
+            <span class="btn btn-dark btn-sm px-3 disabled" aria-disabled="true">
+              Itens: <span id="contador-topo">0</span>
+            </span>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container my-5">
+    <h1 class="h3 fw-bold mb-4">Carrinho e montagem do pedido</h1>
+
+    <div id="feedback-carrinho" class="mb-4" aria-live="polite"></div>
+
+    <div class="row g-4">
+      <div class="col-lg-5">
+        <section class="card border-0 shadow-sm rounded-4 p-4">
+          <h2 class="h5 fw-bold mb-3">Adicionar item ao pedido</h2>
+
+          <form id="form-item-pedido" novalidate>
+            <div class="mb-3">
+              <label for="select-perfume" class="form-label">Perfume</label>
+              <select id="select-perfume" class="form-select">
+                <option value="">Selecione um perfume...</option>
+              </select>
+            </div>
+
+            <div class="mb-3">
+              <label for="input-quantidade" class="form-label">Quantidade (1 a 10)</label>
+              <input type="number" id="input-quantidade" class="form-control" min="1" max="10" value="1">
+            </div>
+
+            <div class="mb-3">
+              <label for="input-cliente" class="form-label">Nome do cliente</label>
+              <input type="text" id="input-cliente" class="form-control" placeholder="Ex.: Lucas">
+            </div>
+
+            <button type="submit" class="btn btn-dark w-100">Adicionar ao carrinho</button>
+          </form>
+        </section>
+      </div>
+
+      <div class="col-lg-7">
+        <section class="card border-0 shadow-sm rounded-4 p-4">
+          <div class="d-flex justify-content-between align-items-center mb-3 gap-2">
+            <h2 class="h5 fw-bold m-0">Itens no carrinho</h2>
+            <button type="button" id="btn-limpar-carrinho" class="btn btn-outline-danger btn-sm">
+              Limpar carrinho
+            </button>
+          </div>
+
+          <div id="lista-itens-carrinho" class="mb-4"></div>
+
+          <hr>
+
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <span class="fw-semibold fs-6">Valor total:</span>
+            <strong id="valor-total" class="fs-4">R$ 0,00</strong>
+          </div>
+
+          <button type="button" id="btn-finalizar-pedido" class="btn btn-success w-100">
+            Confirmar pedido
+          </button>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="border-top py-4 mt-5 bg-white">
+    <div class="container d-flex flex-wrap justify-content-between align-items-center gap-2 small text-secondary">
+      <span>Shopping Le Parfum</span>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
